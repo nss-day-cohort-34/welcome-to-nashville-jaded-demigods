@@ -1,5 +1,5 @@
 const getRestaurantsData = () => {
-  fetch("https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&apikey=38e78bdadcd293f73b93d4476b845664", {
+  fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&apikey=${apiKeys.zomato}`, {
     "headers": {
       "Content-Type": "application/json"
     }
@@ -9,5 +9,3 @@ const getRestaurantsData = () => {
       console.log(results)
     })
 }
-
-// getRestaurantsData()
