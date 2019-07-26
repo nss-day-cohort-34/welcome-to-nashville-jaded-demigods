@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,37 @@
     <title>Welcome To Nashville</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
-  
- <script src="scripts/data.js"></script>   
- <script src="scripts/factory.js"></script>   
- <script src="scripts/dom.js"></script>   
- <script src="scripts/main.js"></script>   
+    <article id="nash-container">
+        <h1>Welcome to Nashville</h1>
+
+        <h2>Search for stuff to do today:</h2>
+
+        <input type="text" id="parks-input">
+        <button id="parks-btn"></button>
+
+        <input type="text" id="restaurants-input">
+        <button id="restaurants-btn"></button>
+
+        <input type="text" id="meetups-input">
+        <button id="meetups-btn"></button>
+
+        <input type="text" id="concerts-input">
+        <button id="concerts-btn"></button>
+
+        <h2>Results</h2>
+        <section id="search-results"></section>
+
+        <h2>My Itinerary</h2>
+        <section id="my-itinerary"></section>
+        
+    </article>
+
+    <script src="scripts/data.js"></script>
+    <script src="scripts/factory.js"></script>
+    <script src="scripts/dom.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
+
 </html>
