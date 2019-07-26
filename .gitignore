@@ -8,3 +8,5 @@ obj
 *.sqlite3
 .vscode
 dist
+scripts/keys.js
+keys.js
