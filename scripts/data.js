@@ -1,8 +1,13 @@
-const someCode = "here's some code"
-const fetchAPIData = () => {
-    fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${searchString}&location.address=nashville&token=${token.name}`, {
-  "headers": {
-      "Accept": "application/json"
-  }
+const getRestaurantsData = () => {
+  fetch("https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&apikey=38e78bdadcd293f73b93d4476b845664", {
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(response => response.json())
+    .then(results => {
+      console.log(results)
+    })
 }
-}
+
+// getRestaurantsData()
