@@ -23,16 +23,20 @@ let idNum = 1
 
 // myFunction()
 
-const userInput = 
+const userInput = "City"
+const searchAPI = (restaurantName) => {
+  return restaurantName >= userInput
+}
 
 getRestaurantsData()
   .then((overallObj) => {
     const restaurantsArr = overallObj.restaurants
-    restaurantsArr.find()
-    restaurantsArr.forEach(restaurant => {
-      const htmlString = resultsHTMLrep(restaurant.name, restaurant.address, idNum)
+    for (let i = 0; i < 4; i++) {
+      const restaurantObj = restaurantsArr.find(searchAPI)
+      const htmlString = resultsHTMLrep(restaurantObj.name, restaurantObj.address, idNum)
       renderResults(htmlString)
       idNum++
-    })
+      restaurantsArr.splice(restaurantObj)
+    }
   })
 

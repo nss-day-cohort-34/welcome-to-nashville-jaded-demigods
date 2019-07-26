@@ -15,17 +15,26 @@
 
         <h2>Search for stuff to do today:</h2>
 
-        <input type="text" id="parks-input" placeholder="parks by feature">
-        <button id="parks-btn">Search</button>
+        <section id="search-container">
+            <fieldset>
+                <input type="text" id="parks-input" placeholder="parks by feature">
+                <button id="parks-btn">Search</button>
+            </fieldset>
 
-        <input type="text" id="restaurants-input" placeholder="restaurants by food type">
-        <button id="restaurants-btn">Search</button>
-
-        <input type="text" id="meetups-input" placeholder="meetups by topic">
-        <button id="meetups-btn">Search</button>
-
-        <input type="text" id="concerts-input" placeholder="concerts by genre">
-        <button id="concerts-btn">Search</button>
+            <fieldset>
+                <input type="text" id="restaurants-input" placeholder="restaurants by food type">
+                <button id="restaurants-btn">Search</button>
+            </fieldset>
+            <fieldset>
+                <input type="text" id="meetups-input" placeholder="meetups by topic">
+                <button id="meetups-btn">Search</button>
+            </fieldset>
+            <fieldset>
+                <input type="text" id="concerts-input" placeholder="concerts by genre">
+                <button id="concerts-btn">Search</button>
+            </fieldset>
+            
+        </section>
 
         <h2>Results</h2>
         <section id="search-results">
@@ -37,10 +46,13 @@
         <h2>My Itinerary</h2>
         <section id="my-itinerary">
             <ul id="itinerary-list">
-
+                <li id="itinerary--1">Park: </li>
+                <li id="itinerary--2">Restaurant: </li>
+                <li id="itinerary--3">Meetup: </li>
+                <li id="itinerary--4">Concert: </li>
             </ul>
         </section>
-        
+
     </article>
 
     <script src="scripts/keys.js"></script>
