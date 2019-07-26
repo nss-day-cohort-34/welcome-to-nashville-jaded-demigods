@@ -1,38 +1,17 @@
-let id = 0
-
 fetchTicketMasterData()
-.then((overallObject) => {
-  console.log(overallObject._embedded.events)
-    const eventsArray = overallObject._embedded.events
-    for (const event of eventsArray) {
-    
-    // const venuesArray = overallObject._embedded.events._embedded
-    // for (const event of venuesArray) {
-    //     if ("address" in overallObject._embedded.events._embedded.venues) {
-    //         event.address = overallObject._emsbedded.events._embedded.venues.address
-    //     }
-
-    //     console.log(event.address)
-        id += 1
-        const eventHTML = createEventHTML(id, event)
-        renderEvent(eventHTML)
- }
+    .then((overallObject) => {
+        let id = 0
+        let venueName = ""
+        const eventsArray = overallObject._embedded.events
+        for (const event of eventsArray) {
+            for (let index = 0; index < eventsArray.length; index++) {
+                const events = eventsArray[index];
+                if ("venues" in events._embedded) {
+                    venueName = events._embedded.venues[0].name
+                }
+            }
+            id += 1
+            const eventHTML = createEventHTML(id, event, venueName)
+            renderEvent(eventHTML)
+        }
     })
-
-// )
-
-// fetchTicketMasterData()
-// .then((overallObject) => {
-// //   console.log(overallObject._embedded.venues)
-//     const venuesArray = overallObject._embedded.events._embedded
-//     for (const event of venuesArray) {
-//         if ("address" in overallObject._embedded.events._embedded.venues) {
-//             event.address = overallObject._emsbedded.events._embedded.venues.address
-//         }
-
-//         console.log(event.address)
-
-//  }
-//     }
-
-// )
