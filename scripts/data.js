@@ -4,5 +4,5 @@ const fetchAPIData = () => {
   "headers": {
       "Accept": "application/json"
   }
-}
+})
 }
