@@ -1,3 +1,8 @@
+document.querySelector(`#save--${idNum}`).addEventListener("click", event => {
+    
+})
+
+
 fetchTicketMasterData()
     .then((overallObject) => {
         let id = 0
