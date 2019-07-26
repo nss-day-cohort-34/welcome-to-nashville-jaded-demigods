@@ -2,21 +2,25 @@ const restBtn = document.querySelector("#restaurants-btn")
 const restPriceSelection = document.querySelector("#restaurants-input")
 let resultsContainer = document.querySelector("#results-list")
 let idNum = 1
+// const restaurantItinerary = document.querySelector("#itinerary--2")
 
 
 getRestaurantsData()
-.then((overallObj) => {
-  const restaurantsArr = overallObj.restaurants
-  
-  const searchForRestaurants = (optValue) => {
-    const resultsArr = restaurantsArr.filter((restaurantObj)=> {
-      return restaurantObj.price === optValue
+  .then((overallObj) => {
+    const restaurantsArr = overallObj.restaurants
+
+    const searchForRestaurants = (optValue) => {
+      const resultsArr = restaurantsArr.filter((restaurantObj) => {
+        return restaurantObj.price === optValue
       })
-      for (let i = 0; i < 4; i++) {
-        const restaurant = resultsArr[i]
-        const htmlString = resultsHTMLrep(restaurant.name, restaurant.address, idNum)
-        renderResults(htmlString)
-        idNum++
+      if (resultsArr.length === 0) {
+        alert("No restaurants in this price range")
+      } else {
+        resultsArr.forEach(restaurantObj => {
+          const htmlString = resultsHTMLrep(restaurantObj, idNum)
+          renderResults(htmlString)
+          idNum++
+        })
       }
     }
 
@@ -25,6 +29,17 @@ getRestaurantsData()
       const optionValue = restPriceSelection.selectedIndex + 1
       searchForRestaurants(optionValue)
     })
+
+    resultsContainer.addEventListener("click", () => {
+      if (event.target.id.includes("save--rest--")) {
+        const idNum = event.target.id.split("--")[2]
+        const liId = `li--${idNum}`
+        const li = document.querySelector(`#${liId}`)
+        const restName = li.textContent.split(":")[0]
+        addRestToItinerary(restName)
+      }
+    })
+
   })
 
 

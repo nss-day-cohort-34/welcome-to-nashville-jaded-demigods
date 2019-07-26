@@ -6,10 +6,9 @@ const createEventHTML = (idNum, eventObj, venue) => {
         </li>
         `
 }
-const resultsHTMLrep = (name, address, idNum) => {
+const resultsHTMLrep = (restaurantObj, idNum) => {
   return `
-    <li id="li--${idNum}">
-      ${name}: ${address}<button id="save--${idNum}">Save</button>
+    <li id="li--${idNum}">${restaurantObj.name}: ${restaurantObj.address}<button id="save--rest--${idNum}">Save</button>
     </li>
   `
 }
