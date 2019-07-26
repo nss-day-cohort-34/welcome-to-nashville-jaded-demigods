@@ -9,7 +9,7 @@ fetchTicketMasterData()
     // }
     const venuesArray = overallObject._embedded._embedded.venues
     for (const event of venuesArray) {
-        if ("address" in overallObject._embedded._embedded.venues && "line1" in overallObject._embedded._embedded.venues.address) {
+        if ("venues" "address" in overallObject._embedded._embedded.venues && "line1" in overallObject._embedded._embedded.venues.address) {
             event.address = overallObject._embedded._embedded.venues.address.line1
         }
 
