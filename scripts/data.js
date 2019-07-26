@@ -17,5 +17,3 @@ const getParksData = () => {
         console.log(results)
       })
   }
-  
-  // getRestaurantsData()
