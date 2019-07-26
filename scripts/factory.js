@@ -1,7 +1,5 @@
-const createEventHTML = (eventObj) => {
+const createEventHTML = (id, eventObj) => {
     return `
-        <ol>
-            <li>${eventObj.name}: ${eventObj.address}</h1>
-        </ol>
+        <li id="event-${id}">${eventObj.name}: </li>
         `
 }

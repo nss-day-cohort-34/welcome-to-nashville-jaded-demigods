@@ -1,4 +1,4 @@
-const eventsContainer = document.querySelector("#search-results")
+const eventsContainer = document.querySelector("#event-list")
 
 const renderEvent = (HTMLString) => {
     eventsContainer.innerHTML += HTMLString
