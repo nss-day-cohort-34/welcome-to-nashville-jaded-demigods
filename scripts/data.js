@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const eric = (5 + 37)
 console.log(eric)
 
@@ -14,3 +15,12 @@ console.log(eric)
 //         .then(response => response.json()) //get the data
 
 // }
+=======
+const fetchAPIData = () => {
+    fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${searchString}&location.address=nashville&token=${token.name}`, {
+  "headers": {
+      "Accept": "application/json"
+  }
+}
+}
+>>>>>>> master
