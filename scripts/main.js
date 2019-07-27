@@ -2,7 +2,7 @@ const restPriceSelection = document.querySelector("#rest-price-select")
 const restPriceSearchBtn = document.querySelector("#rest-price-btn")
 const restNameSearch = document.querySelector("#rest-name-input")
 const restNameSearchBtn = document.querySelector("#rest-name-btn")
-const restStreetSearch = document.querySelector("#restaurant-street-input")
+const restStreetSearch = document.querySelector("#rest-street-input")
 const restStreetSearchBtn = document.querySelector("#rest-street-btn")
 
 let resultsContainer = document.querySelector("#results-list")
