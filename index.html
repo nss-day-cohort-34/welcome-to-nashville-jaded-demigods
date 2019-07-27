@@ -23,13 +23,20 @@
 
             <fieldset>
                 <span>Search Restaurants by Price: </span>
-                <select id="restaurants-input">
+                <select id="restaurants-select">
+                    <option value="none"></option>
                     <option value="price--1">$</option>
                     <option value="price--2">$$</option>
                     <option value="price--3">$$$</option>
                     <option value="price--4">$$$$</option>
                 </select>
-                <button id="restaurants-btn">Search</button>                
+                <button id="restaurants-btn">Search</button>
+
+                <input type="text" id="restaurants-input" placeholder="restaurants by name">
+                <button id="rest-name-btn">Search</button>   
+
+                <input type="text" id="restaurant-street-input" placeholder="restaurants by street name">
+                <button id="rest-street-btn">Search</button>                
             </fieldset>
 
             <fieldset>
