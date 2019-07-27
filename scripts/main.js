@@ -1,5 +1,5 @@
-const restPriceSearchBtn = document.querySelector("#restaurants-btn")
 const restPriceSelection = document.querySelector("#restaurants-select")
+const restPriceSearchBtn = document.querySelector("#restaurants-btn")
 const restNameSearch = document.querySelector("#restaurants-input")
 const restNameSearchBtn = document.querySelector("#rest-name-btn")
 const restStreetSearch = document.querySelector("#restaurant-street-input")
@@ -10,7 +10,6 @@ let idNum = 1
 
 // Create array of restaurant objects based on user input. The filter method accepts a function and gives back an array.
 function searchData(arr, prop, userInput) {
-
   const resultsArr = arr.filter((restaurantObj) => {
     if (prop == "price") {
       return restaurantObj[prop] === userInput
@@ -21,7 +20,7 @@ function searchData(arr, prop, userInput) {
   return resultsArr
 }
 
-// Check if the user's input yields results. If the no results, alert the user. 
+// Check if the user's input yields results. If no results, inform the user. 
 function checkUserInput(arr, prop) {
   if (arr.length === 0 && prop === "price") {
     resultsContainer.innerHTML = "No restaurants in this price range. Please search another price range."
@@ -32,7 +31,7 @@ function checkUserInput(arr, prop) {
   }
 }
 
-// If the user input passes the tests, invoke the functions to create the html representation and render the results in the DOM
+// If the user input passes checkUserInput function, invoke functions to create the html representation and render results in the DOM.
 function showResults(arr) {
   arr.forEach(restaurantObj => {
     const htmlString = resultsHTMLrep(restaurantObj, idNum)
@@ -41,7 +40,7 @@ function showResults(arr) {
   })
 }
 
-// Add click listener to select element (intended for price options)
+// Add click listener to button associated with select element (intended for searching price options)
 function addClickListenerToSelect(btn, select, arr, prop) {
   btn.addEventListener("click", () => {
     resultsContainer.innerHTML = ""               // Reset inner html of results container
@@ -57,7 +56,7 @@ function addClickListenerToSelect(btn, select, arr, prop) {
   })
 }
 
-// Add click listener to input element (intended for name and address searches)
+// Add click listener to button associated with input element (intended for name and address searches)
 function addClickListenerToTextInput(btn, input, type, arr, prop) {
   btn.addEventListener("click", () => {
     resultsContainer.innerHTML = ""                // Reset inner html of results container
@@ -89,8 +88,8 @@ getRestaurantsData()
         const idNum = event.target.id.split("--")[2]
         const liId = `li--${idNum}`
         const li = document.querySelector(`#${liId}`)
-        const restName = li.textContent.split(":")[0]
-        addRestToItinerary(restName)
+        const restaurantName = li.textContent.split(":")[0]
+        addRestToItinerary(restaurantName)
       }
     })
   })
