@@ -8,8 +8,8 @@ const renderConcerts = (HTMLString) => {
 }
 
 // Save concert to itinerary
-const addConcertToItinerary = (string) => {
-  itineraryConcertItem.textContent = string
+const addConcertToItinerary = (HTMLString) => {
+  itineraryConcertItem.innerHTML = HTMLString
 }
 
 // Jacquelyn
