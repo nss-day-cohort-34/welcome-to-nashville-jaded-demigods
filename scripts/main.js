@@ -33,3 +33,10 @@ concertsSearchButton.addEventListener("click", () => {
 
         })
 })
+
+concertsContainer.addEventListener("click", (event) => {
+    if (event.target.id.includes("save-concert--")) {
+        addConcertToItinerary(overallObject._embedded.events)
+
+    }
+})

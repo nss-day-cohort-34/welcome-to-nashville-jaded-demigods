@@ -1,8 +1,15 @@
 // Sarah
 const concertsContainer = document.querySelector("#results-list")
+const itineraryConcertItem = document.querySelector("#itinerary--4")
 
+// Add concerts to results list
 const renderConcerts = (HTMLString) => {
     concertsContainer.innerHTML += HTMLString
+}
+
+// Save concert to itinerary
+const addConcertToItinerary = (string) => {
+  itineraryConcertItem.textContent = string
 }
 
 // Jacquelyn
