@@ -1,47 +1,34 @@
-// Save button selected
-// document.querySelector(`#save--${idNum}`)
-
-const genreOptions = {
-    alternative: "KnvZfZ7vAvv",
-    blues: "KnvZfZ7vAvd",
-    country: "KnvZfZ7vAv6",
-    folk: "KnvZfZ7vAva",
-    hipHopRap: "KnvZfZ7vAv1",
-    pop: "KnvZfZ7vAev",
-    rock: "KnvZfZ7vAeA",
-}
-
+// Get reference to genre options use can select in index.html
 const genre = document.querySelector("#music-genres")
+
+// Get reference to concerts search button
 const concertsSearchButton = document.querySelector("#concerts-btn")
 
-// Get user input
-
-    // Search Genre
-
-    // let selectedGenre = genreSelector.options[genreSelector.selectedIndex].text
-
-    // Look up the selectedIndex property. Create an object with music genres and IDs and iterate through that instead of trying to assign the Genre ID value to the value of the select option. Figure out which one is easier. 
+// Get reference to save button next to a concert item
+//const saveConcertItem = document.querySelector(`#save--${idNum}`)
+ 
 
 // When applying event listener to the Save buttons use event.target since the listener will be at the parent level
 // if (event.target.tagName === 'LI')
 
 concertsSearchButton.addEventListener("click", () => {
+    // Call fetch function and pass in user's selected genre
     fetchTicketMasterData(genre.value)
         .then((overallObject) => {
-            eventsContainer.innerHTML = ""
+            concertsContainer.innerHTML = ""
             let id = 0
             let venueName = ""
-            const eventsArray = overallObject._embedded.events
-            for (const event of eventsArray) {
-                for (let index = 0; index < eventsArray.length; index++) {
-                    const events = eventsArray[index];
+            const concertsArray = overallObject._embedded.events
+            for (const event of concertsArray) {
+                for (let index = 0; index < concertsArray.length; index++) {
+                    const events = concertsArray[index];
                     if ("venues" in events._embedded) {
                         venueName = events._embedded.venues[0].name
                     }
                 }
                 id += 1
-                const eventHTML = createEventHTML(id, event, venueName)
-                renderEvent(eventHTML)
+                const concertsHTML = createConcertHTML(id, event, venueName)
+                renderConcerts(concertsHTML)
             }
 
         })

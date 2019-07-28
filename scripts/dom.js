@@ -1,8 +1,8 @@
 // Sarah
-const eventsContainer = document.querySelector("#results-list")
+const concertsContainer = document.querySelector("#results-list")
 
-const renderEvent = (HTMLString) => {
-    eventsContainer.innerHTML += HTMLString
+const renderConcerts = (HTMLString) => {
+    concertsContainer.innerHTML += HTMLString
 }
 
 // Jacquelyn
