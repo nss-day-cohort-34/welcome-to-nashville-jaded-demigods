@@ -12,8 +12,7 @@ const createConcertHTML = (idNum, concertObj, venue) => {
         <li id="li--${idNum}">
             <h3><span id="concert-name--${idNum}">${concertObj.name}</span><button id="save-concert--${idNum}">Save</button></h3>
             <p>Location: ${venue}</p>
-            <p>Date: ${concertObj.dates.start.localDate} | Time: ${concertObj.dates.start.localTime}</p>
-            
+            <p>Date: ${concertObj.dates.start.localDate} | Time: ${concertObj.dates.start.noSpecificTime ? "No Specific Time": concertObj.dates.start.localTime}</p>
         </li>
         `
 }
