@@ -6,7 +6,7 @@ const concertsSearchButton = document.querySelector("#concerts-btn")
 
 // Get reference to save button next to a concert item
 //const saveConcertItem = document.querySelector(`#save--${idNum}`)
- 
+
 concertsSearchButton.addEventListener("click", () => {
     // Call fetch function and pass in user's selected genre
     fetchTicketMasterData(genre.value)
@@ -26,13 +26,16 @@ concertsSearchButton.addEventListener("click", () => {
                 const concertsHTML = createConcertHTML(id, event, venueName)
                 renderConcerts(concertsHTML)
             }
+                concertsContainer.addEventListener("click", () => {
+                    if (event.target.id.includes("save-concert--")) {
+                        const getConcertIdNum = event.target.id.split("--")[1]
+                        const getConcertNameId = `concert-name--${getConcertIdNum}`
+                        const getConcertName = document.querySelector(`#${getConcertNameId}`).textContent
+                        addConcertToItinerary(getConcertName)
+
+                    }
+                })
 
         })
 })
 
-concertsContainer.addEventListener("click", (event) => {
-    if (event.target.id.includes("save-concert--")) {
-        addConcertToItinerary(overallObject._embedded.events)
-
-    }
-})
