@@ -1,32 +1,22 @@
-// const results = [];
-// const parksInput = "feature";
-// const searchResults = "myActivity";
-// for (i = 0; i < getParksData.length; i++) {
-//   if (getParksData.list[i][parksInput] == searchResults) {
-//     results.push(getParksData.List[i]);
-//   }
-// }
-
-
-
-
-
-
-
-
-
- const parksRadioButtons = document.querySelector("#parks-input");
-const htmlRep = (disc-golf, playground, restrooms, picnic-shelters, dog-parks, ada-accessible, running-trails) => {
+const htmlRep = ((fetchPlaygroundData, fetchPicnicShelterData, fetchDogParksData, fetchRunningTrailsData) => {
   return `
-    <div>
-    <p>${disc-golf} Disc Golf ${playground} Playground ${restrooms} Restrooms ${picnic-shelters} Picnic Shelters ${dog-parks} Dog Parks ${ada-accessible} ADA Compliant${running-trails}Running Trails</p>
-    </div>
-    `
-}
-
-document.querySelector("#saveEntry").addEventListener("click", event => {
-  const name = document.querySelector("#fullName").value;
-  const address = document.querySelector("#address").value;
-  const personAddress = htmlRep(name, address);
-  addressContainer.innerHTML = personAddress;
+  <fieldset>
+  <p>${fetchPlaygroundData}</p> 
+  <p>${fetchPicnicShelterData}</p>
+  <p>${fetchDogParksData}</p> 
+  <p>${fetchRunningTrailsData}</p>
+  </fieldset>
+  `
 })
+
+document.querySelector("#parks-btn").addEventListener("click", event => {
+const parksRadioButtons = document.querySelector("#search-results");
+  const fetchPlaygroundData = document.querySelector("#playgrounds").value;
+  const fetchPicnicShelterData = document.querySelector("#picnic-shelters").value;
+  const fetchDogParksData = document.querySelector("#dog-parks").value;
+  const fetchRunningTrailsData = document.querySelector("#running-trails").value;
+  const htmlOutput = htmlRep(fetchPlaygroundData, fetchPicnicShelterData, fetchDogParksData, fetchRunningTrailsData);
+  parksRadioButtons.innerHTML = htmlOutput;
+})
+
+
