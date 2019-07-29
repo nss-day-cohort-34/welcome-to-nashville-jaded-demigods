@@ -19,4 +19,7 @@ const renderResults = (htmlString) => {
   results.innerHTML += htmlString
 }
 
-// const itinerary = document.querySelector("#itinerary-list")
+const restaurantItinerary = document.querySelector("#itinerary--2")
+const addRestToItinerary = (restName) => {
+  restaurantItinerary.innerHTML = `Restaurant: ${restName}`
+}
