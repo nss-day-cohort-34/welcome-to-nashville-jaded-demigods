@@ -23,27 +23,28 @@ const checkSelectedParkFeature = () => {
 };
 
 parksSearchBtn.addEventListener("click", () => {
-    parksResultsContainer.innerHTML = ""
+  parksResultsContainer.innerHTML = ""
   checkSelectedParkFeature().then((parksReturnedData) => {
-      parksResultsArray.push = parksReturnedData
-      parksReturnedData.forEach(parkObj => {
-          const addressString = parkObj.mapped_location.human_address
-          const addressWordsArray = addressString.split("\"")
-          const streetAddress = addressWordsArray[3]
-         const htmlString = parkHtmlRep(parkObj, streetAddress, parksIdNum)
-         putParksInDOM(htmlString)
-         parksIdNum++
+    parksResultsArray.push = parksReturnedData
+    parksReturnedData.forEach(parkObj => {
+      const addressString = parkObj.mapped_location.human_address
+      const addressWordsArray = addressString.split("\"")
+      const streetAddress = addressWordsArray[3]
+      const htmlString = parkHtmlRep(parkObj, streetAddress, parksIdNum)
+      putParksInDOM(htmlString)
+      parksIdNum++
 
-      })
-      parksResultsContainer.addEventListener("click", () => {
-         const parksSaveBtnId = event.target.id
-         const getParksIdNum = parksSaveBtnId.split("--")[1]
-         const parkNameId = `parkName--${getParksIdNum}`
-         const getParkName = document.querySelector(`#${parkNameId}`).textContent
-         addParkToItenerary(getParkName)
-         
-          
-      })
+    })
+    parksResultsContainer.addEventListener("click", () => {
+      if (event.target.id.includes("savePark--")) {
+        const parksSaveBtnId = event.target.id
+        const getParksIdNum = parksSaveBtnId.split("--")[1]
+        const parkNameId = `parkName--${getParksIdNum}`
+        const getParkName = document.querySelector(`#${parkNameId}`).textContent
+        addParkToItenerary(getParkName)
+
+      }
+    })
   })
 })
 

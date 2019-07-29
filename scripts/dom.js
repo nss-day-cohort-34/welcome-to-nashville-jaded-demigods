@@ -1,6 +1,7 @@
 const putParksInDOM = (htmlString) => {
 parksResultsContainer.innerHTML += htmlString
 }
+
 const iteneraryParksItem = document.querySelector("#itinerary--1")
 
 const addParkToItenerary = (htmlString) => {
@@ -8,8 +9,6 @@ iteneraryParksItem.innerHTML = `Park: ${htmlString}`
 
 }
 
-
-// Sarah
 const concertsContainer = document.querySelector("#results-list")
 const itineraryConcertItem = document.querySelector("#itinerary--4")
 
@@ -19,11 +18,10 @@ const renderConcerts = (HTMLString) => {
 }
 
 // Save concert to itinerary
-const addConcertToItinerary = (HTMLString) => {
-  itineraryConcertItem.innerHTML = HTMLString
+const addConcertToItinerary = (concertName) => {
+  itineraryConcertItem.innerHTML = `Concert: ${concertName}`
 }
 
-// Jacquelyn
 const results = document.querySelector(`#results-list`)
 
 const renderResults = (htmlString) => {
