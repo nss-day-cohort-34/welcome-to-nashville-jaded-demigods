@@ -1,3 +1,20 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.heading--large {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  font-size: 2em;
+  margin: 10px 0px 0px 0px;
+}
+
+.heading--medium {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
 #search-container {
   display: flex;
   flex-direction: column;
@@ -6,4 +23,42 @@
 #search-results {
   overflow-y: auto;
   height: 200px;
+  border: 1px solid black;
+}
+
+.park-buttons {
+  margin-left: 10px;
+}
+
+.rest-inputs {
+  margin-left: 20px;
+}
+
+.activity-details {
+  margin: 2px 0px 5px 0px;
+}
+
+.activity-name {
+  margin: 0px 0px 5px 0px;
+}
+
+.activity-li {
+  margin: 0px 0px 10px 0px;
+}
+
+.save-button {
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.search-buttons {
+  border-radius: 5px;
+}
+
+#music-genres {
+  font-family: 'Roboto', sans-serif;
+}
+
+#itinerary-list {
+  font-size: 1.25em;
 }
