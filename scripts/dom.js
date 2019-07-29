@@ -2,6 +2,13 @@ const putParksInDOM = (htmlString) => {
 parksResultsContainer.innerHTML += htmlString
 }
 
+const iteneraryParksItem = document.querySelector("#itinerary--1")
+
+const addParkToItenerary = (htmlString) => {
+iteneraryParksItem.innerHTML = `Park: ${htmlString}`
+
+}
+
 const concertsContainer = document.querySelector("#results-list")
 const itineraryConcertItem = document.querySelector("#itinerary--4")
 

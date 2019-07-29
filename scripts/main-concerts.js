@@ -33,6 +33,8 @@ concertsSearchButton.addEventListener("click", () => {
                         const getConcertName = document.querySelector(`#${getConcertNameId}`).textContent
                         addConcertToItinerary(getConcertName)
 
+                    } else {
+                        return
                     }
                 })
 
