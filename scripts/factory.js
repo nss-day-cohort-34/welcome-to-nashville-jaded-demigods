@@ -1,7 +1,7 @@
-const parkHtmlRep = (parkObj, streetAdress, idNum) => {
+const parkHtmlRep = (parkObj, streetAdress, parksIdNum) => {
   return `
-  <li id="li--${idNum}">
-  <h3>${parkObj.park_name}</h3> 
+  <li id="li--${parksIdNum}">
+  <h3><span id="parkName--${parksIdNum}">${parkObj.park_name}</span><button id="savePark--${parksIdNum}">Save</button></h3>
   <p>${streetAdress}</p>
   </li>
   `

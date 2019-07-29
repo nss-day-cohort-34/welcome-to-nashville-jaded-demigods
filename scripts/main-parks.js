@@ -4,6 +4,7 @@ const picnicShelterOption = document.querySelector("#picnic-shelters");
 const dogParkOption = document.querySelector("#dog-parks");
 const walkJogOption = document.querySelector("#running-trails");
 const parksSearchBtn = document.querySelector("#parks-btn");
+let parksIdNum = 1
 
 const parksResultsArray = [];
 let parksReturnedData;
@@ -29,10 +30,20 @@ parksSearchBtn.addEventListener("click", () => {
           const addressString = parkObj.mapped_location.human_address
           const addressWordsArray = addressString.split("\"")
           const streetAddress = addressWordsArray[3]
-         const htmlString = parkHtmlRep(parkObj, streetAddress)
+         const htmlString = parkHtmlRep(parkObj, streetAddress, parksIdNum)
          putParksInDOM(htmlString)
+         parksIdNum++
 
       })
+      parksResultsContainer.addEventListener("click", () => {
+         const parksSaveBtnId = event.target.id
+         const getParksIdNum = parksSaveBtnId.split("--")[1]
+         const parkNameId = `parkName--${getParksIdNum}`
+         const getParkName = document.querySelector(`#${parkNameId}`).textContent
+         addParkToItenerary(getParkName)
+         
+          
+      })
   })
-});
+})
 
