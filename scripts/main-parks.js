@@ -1,4 +1,4 @@
-const parksResultsContainer = document.querySelector("#search-results");
+const parksResultsContainer = document.querySelector("#results-list");
 const playgroundOption = document.querySelector("#playground");
 const picnicShelterOption = document.querySelector("#picnic-shelters");
 const dogParkOption = document.querySelector("#dog-parks");
@@ -36,7 +36,3 @@ parksSearchBtn.addEventListener("click", () => {
   })
 });
 
-// if (document.queryselector("#playground").checked) {
-//     playgroundOption = document.queryselector("#playground").value;
-//   }
-// console.log(playgroundOption)

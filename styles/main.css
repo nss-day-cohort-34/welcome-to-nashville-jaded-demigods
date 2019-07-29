@@ -1,0 +1,9 @@
+#search-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#search-results {
+  overflow-y: auto;
+  height: 200px;
+}

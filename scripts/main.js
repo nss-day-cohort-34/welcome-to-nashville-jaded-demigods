@@ -1,1 +1,0 @@
-addEventListener (fetchPlaygroundData, fetchPicnicShelterData, fetchDogParksData, fetchRunningTrailsData);

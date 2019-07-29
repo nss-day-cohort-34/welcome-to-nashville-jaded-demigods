@@ -13,30 +13,68 @@
       <h1>Welcome to Nashville</h1>
 
       <h2>Search for stuff to do today:</h2>
-
+      
+      <section id="search-container">
       <fieldset>
         <input id="playground" type="radio" name="activities" value="playground"> Playgrounds<br />
         <input id="picnic-shelters" type="radio" name="activities" value="picnic_shelters"> Picnic Shelters<br />
         <input id="dog-parks" type="radio" name="activities" value="dog_park" > Dog Parks<br />
         <input id="running-trails" type="radio" name="activities" value="walk_jog_paths" > Running Trails<br />
+        <input id="parks-btn" type="submit" value="Submit" />
       </fieldset>
 
-      <input id="parks-btn" type="submit" value="Submit" />
+      <fieldset>
+          <span>Search Restaurants by Price: </span>
+          <select id="rest-price-select">
+              <option value="none"></option>
+              <option value="price--1">$</option>
+              <option value="price--2">$$</option>
+              <option value="price--3">$$$</option>
+              <option value="price--4">$$$$</option>
+          </select>
+          <button id="rest-price-btn">Search</button>
 
-      <input type="text" id="restaurants-input" />
-      <button id="restaurants-btn"></button>
+          <input type="text" id="rest-name-input" placeholder="restaurants by name">
+          <button id="rest-name-btn">Search</button>   
 
-      <input type="text" id="meetups-input" />
-      <button id="meetups-btn"></button>
+          <input type="text" id="rest-street-input" placeholder="restaurants by street name">
+          <button id="rest-street-btn">Search</button>                
+      </fieldset>
 
-      <input type="text" id="concerts-input" />
-      <button id="concerts-btn"></button>
+      <fieldset>
+          <label for="music-genres">Concerts by Genre</label>
+          <select name="music-genres" id="music-genres">
+              <option value="KnvZfZ7vAvv">Alternative</option>
+              <option value="KnvZfZ7vAvd">Blues</option>
+              <option value="KnvZfZ7vAv6">Country</option>
+              <option value="KnvZfZ7vAva">Folk</option>
+              <option value="KnvZfZ7vAv1">Hip-Hop/Rap</option>
+              <option value="KnvZfZ7vAev">Pop</option>
+              <option value="KnvZfZ7vAeA">Rock</option>
+            </select>
 
-      <h2>Results</h2>
-      <section id="search-results"></section>
+          <button id="concerts-btn">Search</button>
+      </fieldset>
+      
+  </section>
 
-      <h2>My Itinerary</h2>
-      <section id="my-itinerary"></section>
+
+        <h2>Results</h2>
+        <section id="search-results">
+            <ol id="results-list">
+
+            </ol>
+        </section>
+
+        <h2>My Itinerary</h2>
+        <section id="my-itinerary">
+            <ul id="itinerary-list">
+                <li id="itinerary--1">Park: </li>
+                <li id="itinerary--2">Restaurant: </li>
+                <li id="itinerary--4">Concert: </li>
+            </ul>
+        </section>
+
     </article>
 
     <script src="scripts/keys.js"></script>
@@ -44,5 +82,8 @@
     <script src="scripts/factory.js"></script>
     <script src="scripts/dom.js"></script>
     <script src="scripts/main-parks.js"></script>
-  </body>
+    <script src="scripts/main-restaurants.js"></script>
+    <script src="scripts/main-concerts.js"></script>
+</body>
+
 </html>
