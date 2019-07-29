@@ -21,13 +21,19 @@ const checkSelectedParkFeature = () => {
   return parksReturnedData;
 };
 
-parksSearchBtn.addEventListener("click", event => {
+parksSearchBtn.addEventListener("click", () => {
+    parksResultsContainer.innerHTML = ""
   checkSelectedParkFeature().then((parksReturnedData) => {
       parksResultsArray.push = parksReturnedData
-      console.log(parksResultsArray)
-  })
+      parksReturnedData.forEach(parkObj => {
+          const addressString = parkObj.mapped_location.human_address
+          const addressWordsArray = addressString.split("\"")
+          const streetAddress = addressWordsArray[3]
+         const htmlString = parkHtmlRep(parkObj, streetAddress)
+         putParksInDOM(htmlString)
 
-  
+      })
+  })
 });
 
 // if (document.queryselector("#playground").checked) {
