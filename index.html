@@ -15,10 +15,10 @@
       <h2>Search for stuff to do today:</h2>
 
       <fieldset>
-        <input type="radio" name="activities" value="playground" />Playground<br />
-        <input type="radio" name="activities" value="picnic-shelters" /> Picnic Shelters<br />
-        <input type="radio" name="activities" value="dog-parks" /> Dog Parks<br />
-        <input type="radio" name="activities" value="running-trails" /> Running Trails<br />
+        <input id="playgrounds" type="radio" name="activities" value=${fetchPlaygroundData}> Playgrounds<br />
+        <input id="picnic-shelters" type="radio" name="activities" value=${picnicShelters} /> Picnic Shelters<br />
+        <input id="dog-parks" type="radio" name="activities" value=${dogParks} /> Dog Parks<br />
+        <input id="running-trails" type="radio" name="activities" value=${runningTrails} /> Running Trails<br />
       </fieldset>
 
       <input id="parks-btn" type="submit" value="Submit" />
