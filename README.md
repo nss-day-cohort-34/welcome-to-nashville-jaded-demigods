@@ -1,3 +1,5 @@
+### [Click here] (./APPINSTRUCTIONS.md) for app deployment instructions.
+
 # Welcome to Nashville: Build an itinerary for a day trip to Music City
 
 In this app users can search for four different things to do/visit in Nashville:
