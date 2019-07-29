@@ -1,4 +1,4 @@
-### [Click here] (./APPINSTRUCTIONS.md) for app deployment instructions.
+### [Click here](./APPINSTRUCTIONS.md) for app deployment instructions.
 
 # Welcome to Nashville: Build an itinerary for a day trip to Music City
 
