@@ -1,3 +1,6 @@
+const putParksInDOM = (htmlString) => {
+parksResultsContainer.innerHTML += htmlString
+}
 // Sarah
 const concertsContainer = document.querySelector("#results-list")
 const itineraryConcertItem = document.querySelector("#itinerary--4")

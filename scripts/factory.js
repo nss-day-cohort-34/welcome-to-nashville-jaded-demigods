@@ -1,3 +1,12 @@
+const parkHtmlRep = (parkObj, streetAdress, idNum) => {
+  return `
+  <li id="li--${idNum}">
+  <h3>${parkObj.park_name}</h3> 
+  <p>${streetAdress}</p>
+  </li>
+  `
+}
+
 const createConcertHTML = (idNum, concertObj, venue) => {
     return `
         <li id="li--${idNum}">
