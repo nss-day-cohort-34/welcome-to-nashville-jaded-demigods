@@ -22,13 +22,28 @@
             </fieldset>
 
             <fieldset>
-                <input type="text" id="restaurants-input" placeholder="restaurants by food type">
-                <button id="restaurants-btn">Search</button>
+                <span>Search Restaurants by Price: </span>
+                <select id="rest-price-select">
+                    <option value="none"></option>
+                    <option value="price--1">$</option>
+                    <option value="price--2">$$</option>
+                    <option value="price--3">$$$</option>
+                    <option value="price--4">$$$$</option>
+                </select>
+                <button id="rest-price-btn">Search</button>
+
+                <input type="text" id="rest-name-input" placeholder="restaurants by name">
+                <button id="rest-name-btn">Search</button>   
+
+                <input type="text" id="rest-street-input" placeholder="restaurants by street name">
+                <button id="rest-street-btn">Search</button>                
             </fieldset>
+
             <fieldset>
                 <input type="text" id="meetups-input" placeholder="meetups by topic">
                 <button id="meetups-btn">Search</button>
             </fieldset>
+
             <fieldset>
                 <input type="text" id="concerts-input" placeholder="concerts by genre">
                 <select name="music-genres">
@@ -73,6 +88,7 @@
     <script src="scripts/data.js"></script>
     <script src="scripts/factory.js"></script>
     <script src="scripts/dom.js"></script>
+    <script src="scripts/main-restaurants.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 
