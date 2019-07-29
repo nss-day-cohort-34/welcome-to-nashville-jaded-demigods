@@ -20,10 +20,3 @@ const resultsHTMLrep = (name, address, idNum) => {
     </li>
   `
 }
-
-// const itenHTMLrep = (eventType, name) => {
-//   return `
-//   <li>${eventType}: ${name}</li>
-//   `
-// }
-
