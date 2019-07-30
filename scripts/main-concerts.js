@@ -4,8 +4,6 @@ const genre = document.querySelector("#music-genres")
 // Get reference to concerts search button
 const concertsSearchButton = document.querySelector("#concerts-btn")
 
-// Get reference to save button next to a concert item
-//const saveConcertItem = document.querySelector(`#save--${idNum}`)
 
 concertsSearchButton.addEventListener("click", () => {
     // Call fetch function and pass in user's selected genre

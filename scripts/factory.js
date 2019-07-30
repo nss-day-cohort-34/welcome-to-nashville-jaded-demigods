@@ -17,9 +17,11 @@ const createConcertHTML = (idNum, concertObj, venue) => {
         `
 }
 
-const resultsHTMLrep = (restaurantObj, idNum) => {
+const restResultsHTMLrep = (restaurantObj, idNum) => {
   return `
-    <li class="activity-li" id="li--${idNum}">${restaurantObj.name}: ${restaurantObj.address}<button class="save-button" id="save--rest--${idNum}">Save</button>
+    <li class="activity-li" id="li--${idNum}">
+    <h3 class="activity-name"><span id="rest--name--${idNum}">${restaurantObj.name}</span><button class="save-button" id="save--rest--${idNum}">Save</button></h3>
+    <p class="activity-details">${restaurantObj.address}</p>
     </li>
   `
 }
