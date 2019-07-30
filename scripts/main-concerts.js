@@ -27,6 +27,7 @@ concertsSearchButton.addEventListener("click", () => {
                 const concertsHTML = createConcertHTML(id, event, venueName)
                 renderConcerts(concertsHTML)
             }
+            // Add click listener to results container
             concertsContainer.addEventListener("click", () => {
                 if (event.target.id.includes("save-concert--")) {
                     const getConcertIdNum = event.target.id.split("--")[1]
