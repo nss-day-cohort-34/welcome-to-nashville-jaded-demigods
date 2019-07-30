@@ -4,6 +4,7 @@ const genre = document.querySelector("#music-genres")
 // Get reference to concerts search button
 const concertsSearchButton = document.querySelector("#concerts-btn")
 
+// Add event listener to the 
 concertsSearchButton.addEventListener("click", () => {
     // Call fetch function and pass in user's selected genre
     fetchTicketMasterData(genre.value)
@@ -12,7 +13,9 @@ concertsSearchButton.addEventListener("click", () => {
             concertsContainer.innerHTML = ""
             let id = 0
             let venueName = ""
+            // Create variable to store concerts array
             const concertsArray = overallObject._embedded.events
+            // Iterate over array to 
             for (const event of concertsArray) {
                 for (let index = 0; index < concertsArray.length; index++) {
                     const events = concertsArray[index];

@@ -24,7 +24,7 @@ const addConcertToItinerary = (concertName) => {
 
 const results = document.querySelector(`#results-list`)
 
-const renderResults = (htmlString) => {
+const renderRestResults = (htmlString) => {
   results.innerHTML += htmlString
 }
 

@@ -6,15 +6,15 @@ const restStreetSearch = document.querySelector("#rest-street-input")
 const restStreetSearchBtn = document.querySelector("#rest-street-btn")
 
 let resultsContainer = document.querySelector("#results-list")
-let idNum = 1
+let restIdNum = 1
 
-// Create array of restaurant objects based on user input. The filter method accepts a function and gives back an array.
+// Create array of restaurant objects based on user input (not case-sensitive). The filter method accepts a function and gives back an array.
 function searchRestData(arr, prop, userInput) {
   const resultsArr = arr.filter((restaurantObj) => {
-    if (prop === "price") {
+  if (prop === "price") {
       return restaurantObj[prop] === userInput
     } else {
-      return restaurantObj[prop].includes(userInput)
+      return restaurantObj[prop].toLowerCase().includes(userInput.toLowerCase())
     }
   })
   return resultsArr
@@ -34,14 +34,14 @@ function checkForRestResults(arr, prop) {
 // If the user input passes checkForRestResults function, invoke functions to create the html representation and render results in the DOM.
 function showRestResults(arr) {
   arr.forEach(restaurantObj => {
-    const htmlString = resultsHTMLrep(restaurantObj, idNum)
-    renderResults(htmlString)
-    idNum++
+    const htmlString = restResultsHTMLrep(restaurantObj, restIdNum)
+    renderRestResults(htmlString)
+    restIdNum++
   })
 }
 
 // Add click listener to button associated with select element (intended for searching price options)
-function addClickListenerToSelect(btn, select, arr, prop) {
+function addClickListenerToRestSelect(btn, select, arr, prop) {
   btn.addEventListener("click", () => {
     resultsContainer.innerHTML = ""               // Reset inner html of results container
     if (select.selectedIndex === 0) {
@@ -57,7 +57,7 @@ function addClickListenerToSelect(btn, select, arr, prop) {
 }
 
 // Add click listener to button associated with input element (intended for name and address searches)
-function addClickListenerToTextInput(btn, input, type, arr, prop) {
+function addClickListenerToRestTextInput(btn, input, type, arr, prop) {
   btn.addEventListener("click", () => {
     resultsContainer.innerHTML = ""                // Reset inner html of results container
     if (input.value === "") {
@@ -79,17 +79,16 @@ getRestaurantsData()
   .then((overallObj) => {
     const restaurantsArr = overallObj.restaurants
 
-    addClickListenerToSelect(restPriceSearchBtn, restPriceSelection, restaurantsArr, "price")
-    addClickListenerToTextInput(restNameSearchBtn, restNameSearch, "restaurant", restaurantsArr, "name")
-    addClickListenerToTextInput(restStreetSearchBtn, restStreetSearch, "street", restaurantsArr, "address")
+    addClickListenerToRestSelect(restPriceSearchBtn, restPriceSelection, restaurantsArr, "price")
+    addClickListenerToRestTextInput(restNameSearchBtn, restNameSearch, "restaurant", restaurantsArr, "name")
+    addClickListenerToRestTextInput(restStreetSearchBtn, restStreetSearch, "street", restaurantsArr, "address")
 
     resultsContainer.addEventListener("click", () => {
       if (event.target.id.includes("save--rest--")) {
-        const idNum = event.target.id.split("--")[2]
-        const liId = `li--${idNum}`
-        const li = document.querySelector(`#${liId}`)
-        const restaurantName = li.textContent.split(":")[0]
-        addRestToItinerary(restaurantName)
+        const restIdNum = event.target.id.split("--")[2]
+        const restNameId = `rest--name--${restIdNum}`
+        const restName = document.querySelector(`#${restNameId}`).textContent
+        addRestToItinerary(restName)
       }
     })
   })
