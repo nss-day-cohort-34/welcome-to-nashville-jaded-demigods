@@ -4,7 +4,7 @@ const genre = document.querySelector("#music-genres")
 // Get reference to concerts search button
 const concertsSearchButton = document.querySelector("#concerts-btn")
 
-// Add event listener to the 
+// Add click listener to the concerts search button
 concertsSearchButton.addEventListener("click", () => {
     // Call fetch function and pass in user's selected genre
     fetchTicketMasterData(genre.value)
@@ -34,9 +34,6 @@ concertsSearchButton.addEventListener("click", () => {
                     const getConcertNameId = `concert-name--${getConcertIdNum}`
                     const getConcertName = document.querySelector(`#${getConcertNameId}`).textContent
                     addConcertToItinerary(getConcertName)
-
-                } else {
-                    return
                 }
             })
 
