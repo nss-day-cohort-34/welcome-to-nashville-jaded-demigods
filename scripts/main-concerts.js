@@ -15,7 +15,7 @@ concertsSearchButton.addEventListener("click", () => {
             let venueName = ""
             // Create variable to store concerts array
             const concertsArray = overallObject._embedded.events
-            // Iterate over array to 
+            // Iterate over array
             for (const event of concertsArray) {
                 for (let index = 0; index < concertsArray.length; index++) {
                     const events = concertsArray[index];
