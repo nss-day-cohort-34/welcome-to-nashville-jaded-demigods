@@ -1,6 +1,7 @@
+// ${feature} allowed refactoring of code due to four features - this allows for one line of code versus many
 const getParksData = feature => {
   return fetch(
-    `https://data.nashville.gov/resource/74d7-b74t.json?${feature}=Yes`
+    `https://data.nashville.gov/resource/74d7-b74t.json?${feature}=Yes`  
   ).then(response => response.json());
 };
 

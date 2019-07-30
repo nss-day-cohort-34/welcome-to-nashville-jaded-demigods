@@ -1,3 +1,4 @@
+// Global variables - used to tie to elements in the DOM and to add click listeners for the user input
 const parksResultsContainer = document.querySelector("#results-list");
 const playgroundOption = document.querySelector("#playground");
 const picnicShelterOption = document.querySelector("#picnic-shelters");
