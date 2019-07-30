@@ -44,6 +44,7 @@ body {
 
 .activity-li {
   margin: 0px 0px 10px 0px;
+  list-style: 
 }
 
 .save-button {
@@ -62,3 +63,4 @@ body {
 #itinerary-list {
   font-size: 1.25em;
 }
+
